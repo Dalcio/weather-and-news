@@ -1,4 +1,4 @@
-import { newsBaseUrl } from "./urls";
+// import { newsBaseUrl } from "./urls";
 
 const { REACT_APP_NEWS_API_KEY } = process.env;
 
