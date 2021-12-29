@@ -5,10 +5,4 @@ export const weatherIconUrl = (img) =>
   new URL(`http://openweathermap.org/img/wn/${img}@2x.png`).href;
 export const geolocationUrl = `geo/1.0/direct?appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 /* new api urls */
-console.log("Hi");
-
-console.log("weather", process.env.REACT_APP_WEATHER_API_KEY);
-
-console.log("news=>", process.env.REACT_APP_NEWS_API_KEY);
-
-export const newsBaseUrl = `https://newsapi.org/v2/top-headlines?category=science&apiKey=${process.env.REACT_APP_NEWS_API_KEY}/`;
+export const newsBaseUrl = `https://newsapi.org/v2/top-headlines?category=science&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
