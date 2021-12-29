@@ -1,0 +1,30 @@
+.Temperature {
+  grid-column-end: -1;
+  display: flex;
+  background-color: rgba(3, 3, 3, 0.16);
+  border-radius: var(--sm-r);
+  overflow: hidden;
+}
+
+.Temperature > button > svg {
+  color: var(--foreground);
+}
+
+.Temperature > button {
+  display: flex;
+}
+
+.Temperature > button.current > svg {
+  stroke-width: 1;
+}
+
+.Temperature > button.current {
+  background-color: rgba(3, 3, 3, 0.2);
+  border-radius: var(--sm-r);
+}
+
+@media screen and (max-width: 260px) {
+  .Temperature > button:not(.current) {
+    display: none;
+  }
+}

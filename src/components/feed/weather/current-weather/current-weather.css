@@ -1,0 +1,152 @@
+.Current-Weather {
+  background-color: var(--foreground);
+  border-radius: var(--md-r);
+  padding: var(--sm-px);
+
+  display: grid;
+  justify-items: center;
+  grid-template-areas:
+    "region"
+    "weather-icon"
+    "temp"
+    "weather-info"
+    "date";
+}
+
+.Region {
+  grid-area: region;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.Region > *:first-child {
+  font-size: 2em;
+  margin-right: 10px;
+  color: var(--background);
+}
+
+.Region > span {
+  font-size: 1em;
+}
+
+.weather-icon {
+  grid-area: weather-icon;
+  width: 100px;
+  height: 100px;
+}
+
+.temp {
+  grid-area: temp;
+  font-size: 4em;
+  white-space: wrap;
+}
+
+.Weather-Info {
+  grid-area: weather-info;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas:
+    "empty0"
+    "weather-desc"
+    "feels-like"
+    "min-max-rain"
+    "empty1";
+  gap: 6px;
+  text-align: center;
+}
+
+.Weather-Info > .weather-desc {
+  grid-area: weather-desc;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.Weather-Info > .feels-like {
+  grid-area: feels-like;
+  color: var(--secondary);
+}
+
+.Weather-Info > .Min-Max-Rain-Temp {
+  grid-area: min-max-rain;
+  color: var(--secondary);
+}
+
+.Weather-Info > .Min-Max-Rain-Temp > * {
+  display: flex;
+  align-items: center;
+}
+
+.Weather-Info > .Min-Max-Rain-Temp > .rain > *:first-child {
+  margin-left: 5px;
+}
+
+.Current-Date {
+  margin-top: 6px;
+  grid-area: date;
+  color: var(--secondary);
+  text-align: center;
+}
+
+@media screen and (max-width: 323px) {
+  .temp {
+    overflow-wrap: anywhere;
+    text-align: center;
+    font-size: 2.6em;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 324px) {
+  .Current-Weather {
+    grid-template-areas:
+      "region region"
+      "weather-icon temp"
+      "weather-info weather-info"
+      "date date";
+  }
+
+  .Weather-Info {
+    text-align: left;
+  }
+
+  .Weather-Info > .Min-Max-Rain-Temp {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .weather-icon {
+    justify-self: end;
+  }
+
+  .temp {
+    justify-self: start;
+  }
+}
+
+@media screen and (min-width: 416px) {
+  .Current-Weather {
+    column-gap: 6px;
+    grid-template-areas:
+      "region region region"
+      "weather-icon temp weather-info"
+      "date date date";
+  }
+
+  .Weather-Info {
+    justify-items: start;
+    gap: 3px;
+  }
+
+  .Weather-Info > .weather-desc {
+    align-self: end;
+  }
+
+  .Weather-Info > .Min-Max-Rain-Temp {
+    align-self: start;
+  }
+}

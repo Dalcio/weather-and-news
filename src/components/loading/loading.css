@@ -1,0 +1,19 @@
+.Loading {
+  box-sizing: border-box;
+  justify-self: center;
+  margin: 50px 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--secondary-background);
+  animation: load 1s ease-out infinite alternate-reverse;
+}
+
+@keyframes load {
+  from {
+    border: 10px solid #D5E9FA;
+  }
+  to {
+    border: 60px solid #068bff;
+  }
+}

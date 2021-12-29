@@ -1,0 +1,41 @@
+.Weather-Status {
+  border-radius: var(--md-r);
+  background-color: var(--foreground);
+  display: grid;
+  gap: 6px 12px;
+  padding: 12px;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "is-for header"
+    "is-for footer";
+}
+
+.Weather-Status > .is-for {
+  grid-area: is-for;
+  font-size: 2.5em;
+  color: var(--secondary);
+  align-self: center;
+}
+
+.Weather-Status > .is-for > .visibility {
+  font-size: 0.8em;
+}
+
+.Weather-Status > header {
+  grid-area: header;
+  font-weight: 500;
+}
+
+.Weather-Status > footer {
+  grid-area: footer;
+  color: var(--secondary);
+}
+
+.sun {
+  color: #ffcf5c;
+}
+
+.humidity,
+.dew-point {
+  color: #66b5f8;
+}

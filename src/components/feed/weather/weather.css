@@ -1,0 +1,123 @@
+.Weather-Container {
+  display: grid;
+  gap: var(--sm-em);
+  padding: var(--md-px);
+  background-color: var(--background);
+}
+
+.Weather-Container > h3 {
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.Weather-Container > .current-container {
+  display: grid;
+  gap: var(--sm-em);
+}
+
+.Weather-Container > .Detect-Location {
+  position: static;
+  border-radius: var(--sm-r);
+  height: 60px;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.Weather-Container > .Detect-Location > span:last-of-type {
+  display: none;
+}
+
+@media screen and (min-width: 320px) {
+  .Weather-Container > .current-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Current-Weather {
+    grid-column: span 2;
+  }
+
+  .visibility {
+    grid-row-end: span 2;
+  }
+
+  .visibility > Weatherer {
+    align-self: end;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .Weather-Container > .current-container {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .Current-Weather {
+    grid-column: span 3;
+  }
+
+  .uv-index {
+    grid-column-end: span 2;
+  }
+
+  .visibility {
+    grid-row-end: span 1;
+  }
+
+  .dew-point {
+    grid-row-end: span 2;
+  }
+
+  .dew-point > Weatherer {
+    align-self: end;
+  }
+}
+
+@media screen and (min-width: 618px) {
+  .Weather-Container > .current-container {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .Current-Weather {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  .uv-index {
+    grid-column-end: span 1;
+  }
+
+  .dew-point {
+    grid-row-end: span 1;
+  }
+  .dew-point > Weatherer {
+    align-self: center;
+  }
+
+  .sunrise {
+    grid-row-end: span 2;
+  }
+  .sunrise Weatherer {
+    align-self: end;
+  }
+
+  .sunset {
+    grid-column-end: span 2;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .Weather-Container > .current-container {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .Current-Weather {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  .sunset,
+  .sunrise,
+  .uv-index {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+  }
+}

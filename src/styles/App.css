@@ -1,0 +1,33 @@
+.App-Container {
+  height: 100vh;
+}
+
+/** --tablet: 600px; **/
+@media screen and (min-width: 500px) {
+  .App-Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--foreground);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "main-header"
+      "feed";
+    overflow: hidden;
+  }
+}
+
+/** --laptop: 800px; **/
+@media screen and (min-width: 840.5px) {
+  .App-Container {
+    border-radius: var(--md-r);
+    grid-template-rows: auto 1fr var(--md-px);
+    grid-template-areas:
+      "main-header"
+      "feed"
+      "empty";
+    max-width: 830px;
+    /* position: relative; */
+    max-height: 516px;
+    background-color: var(--secondary-background);
+  }
+}

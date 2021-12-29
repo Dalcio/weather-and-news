@@ -1,0 +1,115 @@
+.Search-For-Places {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: height 0.3s ease-in-out;
+  border-radius: var(--sm-r);
+  position: relative;
+  z-index: 2;
+}
+
+.search-field,
+.Detect-Location {
+  position: absolute;
+  top: 32px;
+  width: 100%;
+}
+
+.Search-Input {
+  background-color: rgba(3, 3, 3, 0.16);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-radius: 25px;
+  transition: border-radius 0.5s ease-in-out, border-bottom-left-radius 0.5s ease-in-out,
+    border-bottom-right-radius 0.5s ease-in-out;
+}
+
+.Search-Input[focus="true"] {
+  transition: background-color 0.1ms;
+  background-color: rgba(3, 3, 3, 0.075);
+  border-radius: var(--md-r);
+  transition: border-radius 0.5s ease-in-out, border-bottom-left-radius 0s,
+    border-bottom-right-radius 0s;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.Search-Input > input::-webkit-input-placeholder {
+  color: var(--foreground);
+}
+
+.Search-Input > input {
+  color: var(--foreground) !important;
+  height: var(--input-height);
+  padding: 0 10px;
+  margin-left: 6px;
+  flex-grow: 0.8;
+  width: calc(100% - 32px);
+}
+
+.search-field {
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: var(--sm-r);
+  border-bottom-right-radius: var(--sm-r);
+  color: var(--foreground);
+  overflow: hidden;
+  /* max-height: 264px; */
+}
+
+.Detect-Location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--background);
+  font-weight: 700;
+  padding: var(--sm-px) var(--md-px);
+  background-color: rgb(17, 17, 17);
+  border-bottom-left-radius: var(--sm-r);
+  border-bottom-right-radius: var(--sm-r);
+}
+
+.search-field > div p:first-child {
+  font-size: 16px;
+}
+
+.search-field > div p:last-child {
+  font-size: 12px;
+}
+
+.no-result-found,
+.places > li {
+  padding: var(--sm-px) var(--md-px);
+}
+
+.places > li:hover {
+  cursor: pointer;
+  background-color: var(--black-hover);
+}
+
+.pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media screen and (min-width: 245px) {
+  .Search-For-Places[focus="true"] {
+    grid-column-end: span 2;
+  }
+
+  .search-field {
+    max-height: 264px;
+  }
+
+  .Detect-Location {
+    height: var(--input-height);
+  }
+}

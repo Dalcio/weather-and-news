@@ -1,0 +1,19 @@
+body {
+  font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--primary);
+  /* background:radial-gradient(var(--secondary-background), var(--background)); */
+  background-color: #D5E9FA;
+}
+
+/** --laptop: 800px; **/
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+}

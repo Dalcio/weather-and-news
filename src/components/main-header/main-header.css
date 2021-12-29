@@ -1,0 +1,18 @@
+.Main-Header {
+  grid-area: main-header;
+
+  display: grid;
+
+  gap: var(--sm-em);
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+  align-items: center;
+  padding: var(--sm-em) var(--md-em);
+  background-color: var(--secondary-background);
+}
+
+@media screen and (min-width: 245px) {
+  .Main-Header {
+    grid-template-columns: auto 1fr auto;
+  }
+}

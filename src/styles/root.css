@@ -1,0 +1,66 @@
+:root {
+  /** Colors **/
+  --background: #0084f4;
+  --secondary-background: #66b5f8;
+  --foreground: #ffffff;
+  --primary: #000000;
+  --secondary: #99a2b0;
+  --black-hover: rgba(66, 66, 66, 0.7);
+
+  /** border radius **/
+  --sm-r: 6px;
+  --md-r: 8px;
+
+  /** spacing rem **/
+  --sm-rem: 0.75rem;
+  --md-rem: 1rem;
+
+  /** spacing em **/
+  --sm-em: 0.75em;
+  --md-em: 1em;
+
+  /** spacing px **/
+  --sm-px: 12px;
+  --md-px: 16px;
+
+  --input-width: 32px;
+  --input-height: 32px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input {
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
