@@ -21,11 +21,11 @@ function TrendingNews() {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const loadMore = async () => {
-    const pageSize = articles.length;
+    const max = articles.length;
     setIsLoadingMore(true);
 
     try {
-      const { articles } = await getTidingsAPI(pageSize + 5);
+      const { articles } = await getTidingsAPI(max + 5);
       setArticles([...articles]);
     } catch (error) {
       setArticles((prev) => [...prev]);
@@ -66,11 +66,11 @@ function TrendingNews() {
         <Fragment>
           <div className="tidings-wrapper">
             {articles.map(
-              ({ description, urlToImage, url, title, publishedAt }, index) => (
+              ({ description, image, url, title, publishedAt }, index) => (
                 <div
                   className={`news ${isLastNews(index)}`}
                   key={url}
-                  style={{ backgroundImage: `URL("${urlToImage}")` }}
+                  style={{ backgroundImage: `URL("${image}")` }}
                 >
                   <div className="context">
                     <a href={url} target="_blank" rel="noreferrer">
