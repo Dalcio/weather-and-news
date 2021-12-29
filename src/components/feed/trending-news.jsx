@@ -17,25 +17,25 @@ function DotLoad() {
 }
 
 function TrendingNews() {
-  const [tidingData, setTidingData] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const loadMore = async () => {
-    const limit = tidingData.length;
+    const limit = articles.length;
     if (limit < 20) {
       setIsLoadingMore(true);
       try {
-        const { data } = await getTidingsAPI(limit + 5);
-        setTidingData([...data]);
+        const { articles } = await getTidingsAPI(limit + 5);
+        setArticles([...articles]);
       } catch (error) {
-        setTidingData((prev) => [...prev]);
+        setArticles((prev) => [...prev]);
       }
       setIsLoadingMore(false);
     }
   };
 
   const isLastNews = (index) => {
-    const last = index === tidingData.length - 1;
+    const last = index === articles.length - 1;
     if (!last) return undefined;
 
     const lastTwo = (index + 1) % 3 === 0 && (index + 4) % 3 === 0;
@@ -46,30 +46,27 @@ function TrendingNews() {
   };
 
   useEffect(() => {
-    if (tidingData.length === 0) {
+    if (articles.length === 0) {
       const getTidings = async () => {
         try {
-          const { data } = await getTidingsAPI(5);
-          setTidingData([...data]);
+          const { articles } = await getTidingsAPI(5);
+          setArticles([...articles]);
         } catch (error) {
-          setTidingData([]);
+          setArticles([]);
         }
       };
       getTidings();
     }
-  }, [tidingData]);
+  }, [articles]);
 
   return (
     <section className="Trending-News-Container">
       <h3>Global Trending News</h3>
-      {(tidingData.length > 0 && (
+      {(articles.length > 0 && (
         <Fragment>
           <div className="tidings-wrapper">
-            {tidingData.map(
-              (
-                { description, urlToImage, url, title, publishedAt },
-                index
-              ) => (
+            {articles.map(
+              ({ description, urlToImage, url, title, publishedAt }, index) => (
                 <div
                   className={`news ${isLastNews(index)}`}
                   key={url}

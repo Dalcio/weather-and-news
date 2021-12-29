@@ -13,4 +13,4 @@ export const weatherIconUrl = (img) =>
 export const geolocationUrl = `geo/1.0/direct?appid=${WEATHER_API_KEY}`;
 /* new api urls */
 
-export const newsBaseUrl = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${NEWS_API_KEY}`;
+export const newsBaseUrl = `https://newsapi.org/v2/top-headlines?category=science&apiKey=${NEWS_API_KEY}`;
