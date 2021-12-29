@@ -3,7 +3,7 @@
 // https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=551a92140a939eba32f2a70ac93e5301
 
 const WEATHER_API_KEY = "551a92140a939eba32f2a70ac93e5301";
-const NEWS_API_KEY = "88e51199db6e93893ab2bece8b5060ec";
+const NEWS_API_KEY = "08c3de50e58c40649309ffed24d554d2";
 
 /* open weather api urls */
 export const openWeatherBaseUrl = "https://api.openweathermap.org/";
@@ -13,4 +13,4 @@ export const weatherIconUrl = (img) =>
 export const geolocationUrl = `geo/1.0/direct?appid=${WEATHER_API_KEY}`;
 /* new api urls */
 
-export const newsBaseUrl = `http://api.mediastack.com/v1/news?access_key=${NEWS_API_KEY}&sources=en,pt`;
+export const newsBaseUrl = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${NEWS_API_KEY}`;

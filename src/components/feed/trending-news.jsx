@@ -66,16 +66,19 @@ function TrendingNews() {
         <Fragment>
           <div className="tidings-wrapper">
             {tidingData.map(
-              ({ description, image, url, title, published_at }, index) => (
+              (
+                { description, urlToImage, url, title, publishedAt },
+                index
+              ) => (
                 <div
                   className={`news ${isLastNews(index)}`}
                   key={url}
-                  style={{ backgroundImage: `URL("${image}")` }}
+                  style={{ backgroundImage: `URL("${urlToImage}")` }}
                 >
                   <div className="context">
                     <a href={url} target="_blank" rel="noreferrer">
                       <p>
-                        {title} - <span>{getDate(published_at).utc}</span>
+                        {title} - <span>{getDate(publishedAt).utc}</span>
                       </p>
                       <div className="description">{description}</div>
                     </a>
