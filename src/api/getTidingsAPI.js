@@ -1,11 +1,13 @@
 // import { newsBaseUrl } from "./urls";
 
-const { REACT_APP_NEWS_API_KEY } = process.env;
+const { REACT_APP_GNEWS_API_TOKEN } = process.env;
 
 const getTidingsAPI = async (pageSize = 5) =>
   new Promise(async (resolve, reject) => {
+    console.log("Hello");
+    console.log(REACT_APP_GNEWS_API_TOKEN);
     try {
-      const url = new URL(`https://newsapi.org/v2/top-headlines?category=science&apiKey=${REACT_APP_NEWS_API_KEY}`);
+      const url = new URL(`https://gnews.io/api/v4/search?q=example&token=${REACT_APP_GNEWS_API_TOKEN}`);
       url.searchParams.append("pageSize", pageSize);
 
       const response = await fetch(url);
