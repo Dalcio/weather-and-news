@@ -21,17 +21,17 @@ function TrendingNews() {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const loadMore = async () => {
-    const limit = articles.length;
-    if (limit < 20) {
-      setIsLoadingMore(true);
-      try {
-        const { articles } = await getTidingsAPI(limit + 5);
-        setArticles([...articles]);
-      } catch (error) {
-        setArticles((prev) => [...prev]);
-      }
-      setIsLoadingMore(false);
+    const pageSize = articles.length;
+    setIsLoadingMore(true);
+
+    try {
+      const { articles } = await getTidingsAPI(pageSize + 5);
+      setArticles([...articles]);
+    } catch (error) {
+      setArticles((prev) => [...prev]);
     }
+
+    setIsLoadingMore(false);
   };
 
   const isLastNews = (index) => {

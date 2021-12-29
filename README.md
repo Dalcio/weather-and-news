@@ -2,7 +2,6 @@
 
 ---
 
-
 Supper weather news is a web application that gives to you the forecast according to desired place and best global trending news.
 
 ![Weather](./screenshots/weather-home.png)
@@ -18,17 +17,19 @@ Supper weather news is a web application that gives to you the forecast accordin
    2. [Responsive design](#responsive)
       1. [Small Devices](#small-devices)
       2. [Mobile](#mobile)
-      2. [Tablet](#tablet)
+      3. [Tablet](#tablet)
+      4. [Desktop](#desktop)
 
 ## Features {#features}
 
 1. Search places functionality
 2. Detect location functionality
 3. Metric: Celsius vs imperial: Fahrenheit system (c vs f)
-3. Current weather
+4. Current weather
 5. Global Trending News
 
-__Weather prevision includes:__ 
+**Weather prevision includes:**
+
 - Temperature
 - UV Index
 - Humidity
@@ -39,16 +40,17 @@ __Weather prevision includes:__
 ## Made with {#made-with}
 
 ### Tools {#tools}
+
 - Written with [React JS](https://reactjs.org/)
 - **CSS3** for styling.
 - Icon took (_material design_ and _weather icons_) from React Icons.
 
-### Used APIS {#used-appis}
+### Used APIS {#used-apis}
 
-I used some API's that I'd like to mention because they was very helpful for this project. 
+I used some API's that I'd like to mention because they was very helpful for this project.
 
 - [Open Weather Map](https://openweathermap.org/) for weather forecast and search places
-- [Media Stack](https://mediastack.com/) for global news
+- [NewsApi](https://newsapi.org/) for news about science
 
 ## Screenshots {#screenshots}
 
@@ -60,17 +62,20 @@ I used some API's that I'd like to mention because they was very helpful for thi
 
   ![Search For Places](./screenshots/search-places.png)
 
-
 ### Responsive {#responsive}
 
 #### **Small Devices** {#small-devices}
+
 ![Weather ad News on small devices](./screenshots/small-devices.png)
 
 #### **Mobile** {#mobile}
+
 ![Mobile](./screenshots/mobile.png)
 
 #### **Tablet** {#tablet}
+
 ![Tablet](./screenshots/tablet.png)
 
-#### **Desktop** {#mobile}
+#### **Desktop** {#desktop}
+
 ![Desktop](./screenshots/desktop.png)
